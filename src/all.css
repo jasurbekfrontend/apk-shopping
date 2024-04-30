@@ -3,120 +3,499 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: sans-serif;
+  font-family: sans-serif, "Cera Pro", "Cera Pro Light", "Cera Pro Bold";
 }
-button{
-  border: none;
+/* font import start */
+@font-face {
+  font-family: "Cera Pro";
+  src: url("./assets/CeraPro//CeraProMedium.otf");
+  font-weight: normal;
+  font-style: normal;
 }
-#root {
-  max-width: 1920px;
-  width: 100%;
+@font-face {
+  font-family: "Cera Pro Light";
+  src: url("./assets/CeraPro/CeraProLight.otf");
+  font-weight: normal;
+  font-style: normal;
 }
+@font-face {
+  font-family: "Cera Pro Bold";
+  src: url("./assets/CeraPro/CeraProBold.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* font import end */
 
 body {
   display: flex;
-  align-items: center;
   justify-content: center;
+  overflow-y: hidden;
 }
-
-.main {
-  width: 100%;
-  height: 100vh;
-}
-/* header start */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 405px;
-}
-
-.h-left {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  color: var(--Accent, #66c05d);
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 3.6px;
-}
-
-.h-right {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.h-right > a {
-  color: #000;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.h-right > button {
-  width: 170px;
-  height: 40px;
-  flex-shrink: 0;
-  border-radius: 40px;
-  border: 2px solid var(--Accent, #66c05d);
-  background: #fff;
+button,
+a {
   cursor: pointer;
 }
 
-.navbar {
+.home-wrapper {
+  width: 414px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  padding-top: 62px;
+  background-color: #f6f5f5;
+  position: relative;
+}
+.navigate-back {
+  display: flex;
+  margin-bottom: 23px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.user-wrapper {
+  width: 414px;
+  height: 816px;
+}
+.basket-wrapper {
+  width: 414px;
+  height: 816px;
+}
+
+.home-wrapper > b {
+  color: rgb(45, 12, 87);
+  font-family: Cera Pro Bold;
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 27px;
+}
+.search {
+  width: 374px;
+  height: 48px;
+  box-sizing: border-box;
+  border: 1px solid rgb(217, 208, 227);
+  border-radius: 27px;
+  background: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  padding: 0 22px;
+  justify-content: space-between;
+  margin-bottom: 42px;
+}
+.search > button {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  font-style: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
-  padding: 40px 0;
+  border: none;
+  outline: none;
 }
-
-.navbar > a {
-  color: #000;
-  font-size: 16px;
-  font-style: normal;
+.search > input {
+  width: 290px;
+  height: 24px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  color: rgb(149, 134, 168);
+  font-family: Cera Pro Light;
+  font-size: 17px;
   font-weight: 400;
-  line-height: normal;
+}
+.categories-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  overflow: scroll;
+}
+div::-webkit-scrollbar {
+  display: none;
+}
+.category-card {
+  width: 177px;
+  height: 211px;
+  border-radius: 8px;
+  background: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+}
+.image-box {
+  width: 177px;
+  height: 140px;
 }
 
-.cards {
+.image-box > img {
+  object-fit: cover;
+  border-radius: 8px 8px 0px 0px;
   width: 100%;
-  height: auto;
+  height: 100%;
+  overflow: hidden;
+}
+.text-box {
+  width: 100%;
+  height: 71px;
+  padding: 0 16px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.text-box > b {
+  color: rgb(45, 12, 87);
+  font-family: Cera Pro Bold;
+  font-size: 18px;
+  font-weight: 700;
+}
+.text-box > span {
+  color: rgb(149, 134, 168);
+  font-family: Cera Pro Light;
+  font-size: 12px;
+  font-weight: 400;
+  background: rgb(255, 255, 255);
+}
+footer {
+  width: 414px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 25px;
-  padding-top: 140px;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+}
+footer > a {
+  width: 138px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+.shop-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 520px;
+  overflow: scroll;
+  padding-bottom: 20px;
+}
+.shop-card {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.left-side {
+  width: 177px;
+  height: 128px;
+}
+.left-side > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.right-side {
+  display: flex;
+  flex-direction: column;
+}
+.right-side > b {
+  color: rgb(45, 12, 87);
+  font-family: Cera Pro;
+  font-size: 18px;
+  font-weight: 600;
+}
+.price {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-top: 12px;
+  margin-bottom: 30px;
+}
+.price > b {
+  color: rgb(45, 12, 87);
+  font-family: Cera Pro;
+  font-size: 22px;
+  font-weight: 700;
+}
+.price > p {
+  color: rgb(149, 134, 168);
+  font-family: Cera Pro Light;
+  font-size: 16px;
+  font-weight: 400;
+}
+.actions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.basket-actions {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+}
+.basket-actions > :first-child {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a5a5a5;
+  background-color: #f6f6f6;
+  font-size: 20px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+}
+.basket-actions > :nth-child(3) {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a5a5a5;
+  background-color: #f6f6f6;
+  font-size: 20px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+}
+.basket-actions > :nth-child(2) {
+  font-family: Cera Pro;
+  font-size: 16px;
+  color: #3d3d3d;
+}
+.basket-actions > :nth-child(4) {
+  border: none;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+.actions > :first-child {
+  width: 78px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid rgb(217, 208, 227);
+  border-radius: 8px;
+  background: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(217, 208, 227);
+  font-size: 20px;
+}
+.actions > :last-child {
+  width: 78px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgb(11, 206, 131);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  outline: none;
+}
+.shop-wrapper {
+  width: 414px;
+  height: 96px;
+}
+.top-card {
+  width: 414px;
+  height: 358px;
+}
+.top-card > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-card {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+.bottom-card {
+  position: absolute;
+  bottom: 0;
+  width: 414px;
+  height: 615px;
+  border-radius: 30px 30px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  padding-top: 37px;
+  padding-bottom: 65px;
+  background: rgb(246, 245, 245);
+}
+.bottom-card > b {
+  color: rgb(45, 12, 87);
+  font-family: Cera Pro Bold;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.shop-price {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+.shop-price > b {
+  color: rgb(45, 12, 87);
+  font-family: Cera Pro Bold;
+  font-size: 32px;
+  font-weight: 700;
+}
+.shop-price > p {
+  color: rgb(149, 134, 168);
+  font-family: Cera Pro Light;
+  font-size: 24px;
+  font-weight: 400;
 }
 
-.card{
-  width: 255px;
-height: 363px;
-flex-shrink: 0;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-between;
-padding: 25px 30px;
-
+.bottom-card > p {
+  color: rgb(6, 190, 119);
+  font-family: Cera Pro;
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 32px;
 }
-
-.card > button{
-  width: 130px;
-height: 35px;
-flex-shrink: 0;
-color: #FFF;
-text-align: center;
-font-family: Roboto;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: 0.7px;
-border-radius: 30px;
-background: var(--Accent, #66C05D);
+.bottom-card > span {
+  margin-bottom: 56px;
+  color: rgb(149, 134, 168);
+  font-family: Cera Pro;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.41px;
+  text-align: left;
+}
+.shop-actions {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 21px;
+}
+.shop-actions > button:first-child {
+  width: 78px;
+  height: 56px;
+  box-sizing: border-box;
+  border: 1px solid rgb(217, 208, 227);
+  border-radius: 8px;
+  background: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  color: rgb(217, 208, 227);
+}
+.shop-actions > button:last-child {
+  width: 275px;
+  height: 56px;
+  border-radius: 8px;
+  background: rgb(11, 206, 131);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #fff;
+  font-family: Cera Pro;
+  border: none;
+  outline: none;
+}
+.total-price {
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.total-price > p {
+  font-size: 22px;
+  font-family: Cera Pro;
+}
+.total-price > button {
+  width: 100px;
+  height: 46px;
+  border-radius: 8px;
+  background: rgb(11, 206, 131);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #fff;
+  font-family: Cera Pro;
+  border: none;
+  outline: none;
+}
+.auth{
+  width: 414px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(246, 245, 245);
+}
+.auth > form{
+  width: 70%;
+  height: 50%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 30px;
+}
+.auth > form > b{
+  font-family: Cera Pro Bold;
+  font-size: 20px;
+  font-weight: 700;
+}
+.auth > form > p{
+  font-family: Cera Pro Light;
+}
+.auth > form > p > b{
+  cursor: pointer;
+  margin-top: 10px;
+}
+.auth > form > input{
+  width: 100%;
+  padding-left: 20px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid rgb(217, 208, 227);
+  outline: none;
+  font-size: 16px;
+  font-family: Cera Pro;
+  /* color: rgb(217, 208, 227); */
+  
+}
+.auth > form > button{
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  background: rgb(11, 206, 131);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #fff;
+  font-family: Cera Pro;
+  border: none;
+  outline: none;
 }
