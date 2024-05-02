@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <footer>
       <Link
-        to="/home"
+        to="/"
         style={
           home || shop || fruit || milk || vegetable
             ? { color: "#7203FF" }

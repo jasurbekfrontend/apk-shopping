@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Register = ({ setRegistered }) => {
+const Register = () => {
   const navigate = useNavigate();
   function handleSubmit(event) {
     event.preventDefault();
@@ -12,8 +12,8 @@ const Register = ({ setRegistered }) => {
     };
     localStorage.setItem("user", JSON.stringify(obj));
 
-    navigate("/home");
-    setRegistered(true);
+    localStorage.setItem("registered", JSON.stringify(true));
+    navigate("/");
   }
   return (
     <div className="auth">

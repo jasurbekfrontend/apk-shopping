@@ -335,16 +335,21 @@ function App() {
       category: "/milk",
     },
   ];
-  const [registered, setRegistered] = useState(false);
+  const [registered, setRegistered] = useState(
+    JSON.parse(localStorage.getItem("registered")) || false
+  );
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Register setRegistered={setRegistered} />} />
         <Route
-          path="/login"
-          element={<Login setRegistered={setRegistered} />}
+          path={registered === true ? "/register" : "/"}
+          element={<Register />}
         />
-        <Route path="/home" element={<Home category={category} />} />
+        <Route path="/login" element={<Login />} />
+        <Route
+          path={registered === true ? "/" : "/home"}
+          element={<Home category={category} />}
+        />
         <Route
           path="/fruit"
           element={

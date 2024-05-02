@@ -6,7 +6,7 @@ const BackButton = () => {
   const navigate = useNavigate();
 
   return (
-    <button className="navigate-back" onClick={() => navigate("/home")}>
+    <button className="navigate-back" onClick={() => navigate("/")}>
       <img src={back} alt="" />
     </button>
   );
